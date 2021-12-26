@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if (g++ -o $1 $1.cpp); then
+"$(pwd)"/$1
+fi
