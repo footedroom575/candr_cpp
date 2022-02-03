@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sudo cp ./candr1 /usr/bin
+sudo cp ./candr /usr/bin
 
-chmod +rx /usr/bin/candr1
+chmod +rx /usr/bin/candr
