@@ -42,7 +42,7 @@ And will later execute it as `./filename`
 Run `candr example` after installation in candr_cpp folder.
 
 **Output:**
-(https://raw.githubusercontent.com/footedroom575/candr_cpp/main/candr_example.png)
+![Exmaple image](https://raw.githubusercontent.com/footedroom575/candr_cpp/main/candr_example.png)
 
 ## Issues/Feature Requests
 
