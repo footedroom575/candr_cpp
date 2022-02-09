@@ -14,7 +14,7 @@ Using Git:
 
 or download as zip from **"Code"** -> **"Download ZIP"** option above.
 
-Extract the zip and run the following in the candr_cpp folder:
+Extract the zip and run the following:
 
 To get to candr_cpp, run:
 
@@ -35,3 +35,7 @@ It will execute the file as `g++ filename.cpp -o filename`
 And will later execute it as `./filename`
 
 **Note**: Don't add .cpp at the end of the filename, it does this work for you :)
+
+Please report any issues with and use the title "Feature Request/....." in Issues to request a new feature.
+
+For more information, use `candr --help`
