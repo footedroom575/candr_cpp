@@ -1,5 +1,25 @@
 #!/bin/bash
 
-if (g++ -o $1 $1.cpp); then
-"$(pwd)"/$1
+function got_param() {
+    local terms="$1"
+    shift
+
+    for term in $terms; do
+        for arg; do
+            if [[ $arg == "$term" ]]; then
+                echo "yeah"
+            fi
+        done
+    done
+}
+
+if [[ -n $(got_param "-g --gtest" "$@") ]]
+then
+	if (g++ -o $2 $2.cpp -lgtest -lgtest_main); then
+	"$(pwd)"/$2
+	fi
+else
+	if (g++ -o $1 $1.cpp); then
+	"$(pwd)"/$1
+	fi
 fi
