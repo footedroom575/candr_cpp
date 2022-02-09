@@ -36,6 +36,15 @@ And will later execute it as `./filename`
 
 **Note**: Don't add .cpp at the end of the filename, it does this work for you :)
 
+
+## Example
+
+Run `candr example` after installation in candr_cpp folder.
+
+**"Output:"**
+
+## Issues/Feature Requests
+
 Please report any issues with and use the title "Feature Request/....." in Issues to request a new feature.
 
 For more information, use `candr --help`
