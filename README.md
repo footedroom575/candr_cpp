@@ -16,6 +16,12 @@ or download as zip from **"Code"** -> **"Download ZIP"** option above.
 
 Extract the zip and run the following in the candr_cpp folder:
 
+To get to candr_cpp, run:
+
+`cd candr_cpp`
+
+To install script, run:
+
 `sudo bash ./install.sh`
 
 
