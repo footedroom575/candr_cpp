@@ -46,6 +46,6 @@ Run `candr example` after installation in candr_cpp folder.
 
 ## Issues/Feature Requests
 
-Please report any issues with and use the title "Feature Request/....." in Issues to request a new feature.
+Please report any issues with the script in Issues and to request a new feature, use the title "Feature Request/....." in Issues.
 
 For more information, use `candr --help`
