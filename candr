@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 function got_param() {
     local terms="$1"
     shift
@@ -14,28 +13,33 @@ function got_param() {
     done
 }
 
+function printHelp(){
+	echo "Usage: candr [OPTION].. filename"
+	echo "Use 'candr' to compile and run a cpp file in a single command."
+	echo "Example: candr program"
+	echo " "
+	echo "Note: Don't use .cpp with filename, it will automatically understand it i.e. candr program instead of program.cpp"
+	echo " "
+}
+
 if [[ -n $(got_param "-g --gtest" "$@") ]]
 then
 	if (g++ -o $2 $2.cpp -lgtest -lgtest_main); then
 	"$(pwd)"/$2
 	fi
+elif [[ -n $(got_param "--sfml" "$@") ]]
+then
+	if (g++ -c $2.cpp); then
+	g++ -o $2 $2.cpp -lsfml-graphics -lsfml-window -lsfml-system
+	"$(pwd)"/$2
+	fi
 elif [[ -n $(got_param "-h" "$@") ]]
 	then
-		echo "Usage: candr [OPTION].. filename"
-		echo "Use 'candr' to compile and run a cpp file in a single command."
-		echo "Example: candr program"
-		echo " "
-		echo "Note: Don't use .cpp with filename, it will automatically understand it i.e. candr program instead of program.cpp"
-		echo " "
+		printHelp
 		echo "Try candr --help for more info"
 elif [[ -n $(got_param "--help" "$@") ]]
 	then
-		echo "Usage: candr [OPTION].. filename"
-		echo "Use 'candr' to compile and run a cpp file in a single command."
-		echo "Example: candr program"
-		echo " "
-		echo "Note: Don't use .cpp with filename, it will automatically understand it i.e. candr program instead of program.cpp"
-		echo " "
+		printHelp
 		echo "Available Parameters:
 		
 	-g, --gtest   Add '-lgtest -lgtest_main' flags at the end of g++ command
