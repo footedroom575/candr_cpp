@@ -1,8 +1,8 @@
 # CANDR - Compile And Run
 
-CANDR is a very basic **Linux shell script** to compile and execute C++ (.cpp) files.
+CANDR is a very basic **Linux shell script** to compile and execute C++ (.cpp) or Java (.java) files.
 
-It executes the CPP Program immediately if it gets compiled successfully. Otherwise, it shows the output or the compilation error.
+It executes the CPP/Java Program immediately if it gets compiled successfully. Otherwise, it shows the output or the compilation error.
 
 ## Installation:
 
@@ -36,10 +36,12 @@ And will later execute it as `./filename`
 
 **Note**: Don't add .cpp at the end of the filename, it does this work for you :)
 
+For Java, you can use `-j` flag.
 
-## Example
 
-Run `candr example` after installation in candr_cpp folder.
+## Verify Installation
+
+Run `candr example` after installation.
 
 **Output:**
 ![Exmaple image](https://raw.githubusercontent.com/footedroom575/candr_cpp/main/examples/candr_example.png)
