@@ -33,6 +33,11 @@ then
 	g++ -o $2 $2.cpp -lsfml-graphics -lsfml-window -lsfml-system
 	"$(pwd)"/$2
 	fi
+elif [[ -n $(got_param "--java -j" "$@") ]]
+then
+	if (javac $2.java); then
+	java "$(pwd)"/$2
+	fi
 elif [[ -n $(got_param "-h" "$@") ]]
 	then
 		printHelp
