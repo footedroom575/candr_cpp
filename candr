@@ -46,7 +46,8 @@ elif [[ -n $(got_param "--help" "$@") ]]
 	then
 		printHelp
 		echo "Available Parameters:
-		
+
+	-j, --java	  Compiles and runs a Java file
 	-g, --gtest   Add '-lgtest -lgtest_main' flags at the end of g++ command
 	-h, --help    Display help section
 		
