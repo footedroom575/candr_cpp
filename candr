@@ -36,7 +36,7 @@ then
 elif [[ -n $(got_param "--java -j" "$@") ]]
 then
 	if (javac $2.java); then
-	java "$(pwd)"/$2
+	java $2
 	fi
 elif [[ -n $(got_param "-h" "$@") ]]
 	then
