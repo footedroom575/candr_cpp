@@ -14,11 +14,11 @@ function got_param() {
 }
 
 function printHelp(){
-	echo "Usage: candr [OPTION].. filename"
-	echo "Use 'candr' to compile and run a cpp file in a single command."
+	echo "Usage: candr [OPTION] filename"
+	echo "Use 'candr' to compile and run a cpp file/s in a single command."
 	echo "Example: candr program"
 	echo " "
-	echo "Note: Don't use .cpp with filename, it will automatically understand it i.e. candr program instead of program.cpp"
+	echo "Note: Don't use .cpp with filename, it will automatically understand it i.e. 'candr program' instead of 'candr program.cpp'"
 	echo " "
 }
 
@@ -38,6 +38,22 @@ then
 	if (javac $2.java); then
 	java $2
 	fi
+elif [[ -n $(got_param "--multiple -m" "$@") ]]
+then
+	names=()
+	output=''
+	for i in "$@"
+	do
+		if [ $i != "-m" ] && [ $i != "--multiple" ]
+		then
+			names+=($i.cpp)
+			output+=$i
+		fi
+	done
+
+	if (g++ ${names[@]} -o $output); then
+	"$(pwd)"/${output[@]}
+	fi
 elif [[ -n $(got_param "-h" "$@") ]]
 	then
 		printHelp
@@ -47,9 +63,10 @@ elif [[ -n $(got_param "--help" "$@") ]]
 		printHelp
 		echo "Available Parameters:
 
-	-j, --java	  Compiles and runs a Java file
-	-g, --gtest   Add '-lgtest -lgtest_main' flags at the end of g++ command
-	-h, --help    Display help section
+	-m, --multiple  Compiles multiple files and runs the output file
+	-j, --java	    Compiles and runs a Java file
+	-g, --gtest     Add '-lgtest -lgtest_main' flags at the end of g++ command
+	-h, --help      Display help section
 		
 For bugs and feature requests, create an issue at https://github.com/footedroom575/candr_cpp/issues"
 else	
